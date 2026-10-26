@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pestañas</title>
+  <link rel="icon" href="icons/icon.svg">
+  <link rel="stylesheet" href="expose.css">
+</head>
+<body class="busy">
+  <div id="backdrop"><img id="backdrop-img" alt=""></div>
+
+  <header id="bar">
+    <div id="count"></div>
+    <label class="search">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.75"/><path d="m10.5 10.5 3.5 3.5"/></svg>
+      <input id="search" type="search" placeholder="Buscar pestañas" autocomplete="off" spellcheck="false" autofocus>
+    </label>
+    <button id="new-tab" title="Nueva pestaña" aria-label="Nueva pestaña">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg>
+    </button>
+  </header>
+
+  <main id="stage">
+    <div id="grid"></div>
+    <p id="empty" hidden></p>
+  </main>
+
+  <template id="card-tpl">
+    <div class="card">
+      <div class="thumb">
+        <button class="close" title="Cerrar pestaña" aria-label="Cerrar pestaña">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 4.5 7 7m0-7-7 7"/></svg>
+        </button>
+        <button class="audio" title="Silenciar" aria-label="Silenciar" hidden>
+          <svg class="on" viewBox="0 0 16 16" aria-hidden="true"><path class="fill" d="M2.5 6h2.5l3.5-3v10l-3.5-3h-2.5z"/><path d="M11 5.5a3.5 3.5 0 0 1 0 5M12.8 3.6a6 6 0 0 1 0 8.8"/></svg>
+          <svg class="off" viewBox="0 0 16 16" aria-hidden="true"><path class="fill" d="M2.5 6h2.5l3.5-3v10l-3.5-3h-2.5z"/><path d="m11 6 4 4m0-4-4 4"/></svg>
+        </button>
+      </div>
+      <div class="label">
+        <svg class="pin" viewBox="0 0 16 16" aria-hidden="true"><path d="M9.8 1.8 14.2 6.2l-1.3.6-2.6 2.6-.3 3.2-6.6-6.6 3.2-.3 2.6-2.6zM5.6 10.4 2 14"/></svg>
+        <img class="favicon" alt="" draggable="false">
+        <span class="title"></span>
+      </div>
+    </div>
+  </template>
+
+  <script src="expose.js"></script>
+</body>
+</html>
